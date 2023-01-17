@@ -11,8 +11,9 @@ import * as yup from "yup";
 const Login = () => {
     
 
+
     const schema = yup.object().shape({
-        usuario: yup.string().max(32).required().email(),
+        user: yup.string().max(32).required().email(),
         password: yup.string().max(32).required(),
     });
 
@@ -50,10 +51,10 @@ const Login = () => {
                             Sign In With Email Address
                         </Typography>
                         <Controller render={({ formState, field}) => {
-                            return <TextField {...field} error={!!formState.errors?.usuario}
+                            return <TextField {...field} error={!!formState.errors?.user}
                                 id="outlined-basic" sx={{ width: "100%", mt: 3 }} label="Email Address/Username" variant="outlined" />
                         }}
-                        name="usuario"
+                        name="user"
                         control={control}
                         defaultValue=""
                         />
